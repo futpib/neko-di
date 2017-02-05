@@ -3,7 +3,7 @@ const test = require('ava');
 
 const {permutation} = require('js-combinatorics');
 
-const {plan} = require('.');
+const {plan} = require('./plan');
 
 test('totally missing', t => {
 	const planA = plan([], 'a');
