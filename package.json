@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "GPL-3.0+",
   "dependencies": {
-    "ava": "^0.18.1",
     "immutable": "^3.8.1",
     "ramda": "^0.23.0",
-    "xo": "^0.17.1"
+    "sha1": "^1.1.1"
   },
   "devDependencies": {
-    "js-combinatorics": "^0.5.2"
+    "ava": "^0.18.1",
+    "js-combinatorics": "^0.5.2",
+    "sinon": "^1.17.7",
+    "xo": "^0.17.1"
   }
 }

@@ -1,1 +1,1 @@
-module.exports = require('./plan');
+module.exports = require('./di');
