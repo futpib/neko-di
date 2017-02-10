@@ -13,5 +13,8 @@
     "js-combinatorics": "^0.5.2",
     "sinon": "^1.17.7",
     "xo": "^0.17.1"
+  },
+  "scripts": {
+    "test": "xo && ava"
   }
 }
