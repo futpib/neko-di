@@ -2,17 +2,20 @@
 const test = require('ava');
 const sinon = require('sinon');
 
-const makedi = require('./di');
+const {
+	DependencyInjector,
+	PlanLintError
+} = require('./di');
 
 const spy = () => sinon.spy(() => ({}));
 
 test.beforeEach(t => {
-	t.context.di = makedi();
+	t.context.di = new DependencyInjector();
 });
 
 test('totally missing', t => {
 	const {di} = t.context;
-	t.throws(() => di.require('a'));
+	t.throws(() => di.require('a'), PlanLintError);
 });
 
 test('missing', t => {
@@ -20,7 +23,7 @@ test('missing', t => {
 
 	di.define('a', ['b'], () => {});
 
-	t.throws(() => di.require('a'));
+	t.throws(() => di.require('a'), PlanLintError);
 });
 
 test('missing circular', t => {
@@ -29,6 +32,8 @@ test('missing circular', t => {
 	di.define('a', ['a'], () => {});
 
 	t.throws(() => di.require('a'));
+	// TODO
+	// t.throws(() => di.require('a'), PlanLintError);
 });
 
 test('ok', t => {

@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "GPL-3.0+",
   "dependencies": {
+    "es6-error": "^4.0.2",
     "immutable": "^3.8.1",
     "ramda": "^0.23.0",
     "sha1": "^1.1.1"
